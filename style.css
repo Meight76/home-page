@@ -47,7 +47,7 @@ body {
     flex-direction: column;
 
     h2 {
-        margin-top: 0;
+        margin-top: 20px;
     }
     p {
         max-width: 100%;
@@ -56,14 +56,15 @@ body {
         white-space: normal;
     }
 
-    img {
-        max-width: 100%;
-        height: auto;
-    }
+    .social-media {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
 
-    /* .social-media {
-        text-align: center;
-    } */
+        svg {
+            min-width: 24px;
+        }
+    }
 }
 
 .hidden {
@@ -74,10 +75,9 @@ body {
 .placeholder-img.dog {
     background-image: url("./assets/somebody.jpeg");
     color: transparent;
-    border-radius: 8px;
     background-size: contain;
     background-repeat: no-repeat;
-    min-height: 300px;
+    aspect-ratio: 863 / 842;
     min-width: 50%;
     align-self: center;
 }
