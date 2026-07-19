@@ -26,10 +26,12 @@ svg {
 }
 
 h2 {
+    text-align: center;
     font-size: 1.1rem;
 }
 body {
-    margin: 40px 0 0 0;
+    position: relative;
+    margin: 0;
     width: auto;
     min-height: 100svh;
     max-width: none;
@@ -50,10 +52,24 @@ body {
         margin-top: 20px;
     }
     p {
+        position: relative;
+        padding: 10px;
+        text-align: center;
         max-width: 100%;
         font-size: 0.6rem;
         overflow-wrap: break-word;
         white-space: normal;
+    }
+
+    .description::after {
+        content: "";
+        position: absolute;
+        border-radius: 3px;
+        top: 0;
+        width: 3px;
+        background-color: rebeccapurple;
+        height: 100%;
+        left: 5px;
     }
 
     .social-media {
@@ -67,12 +83,25 @@ body {
     }
 }
 
+.about-background {
+    position: absolute;
+    z-index: -1;
+    clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+    padding-bottom: 20px;
+    min-height: calc(100% - 10rem);
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: rebeccapurple;
+}
+
 .hidden {
     position: absolute;
     opacity: 0;
 }
 
 .placeholder-img.dog {
+    margin-top: 40px;
     background-image: url("./assets/somebody.jpeg");
     color: transparent;
     background-size: contain;
@@ -111,6 +140,7 @@ body {
 
     .visualize-work {
         display: flex;
+        transform: translateY(5px);
         min-width: 80px;
         gap: 10px;
         justify-content: start;
@@ -134,5 +164,34 @@ body {
 
 .footer {
     margin-top: 80px;
-    background-color: lightblue;
+    padding: 16px;
+    color: #fff;
+    background-color: rebeccapurple;
+
+    .social-medias {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+
+        svg {
+            min-width: 24px;
+        }
+    }
+
+}
+
+.tel,
+.email {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+
+    svg {
+        fill: #fff;
+    }
+}
+
+.adress p {
+    margin-top: 0;
+    margin-bottom: 0;
 }
