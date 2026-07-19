@@ -83,9 +83,11 @@ body {
     }
 }
 
-.about-background {
+.about-me::after {
+    content: "";
     position: absolute;
     z-index: -1;
+    min-width: 100vw;
     clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
     padding-bottom: 20px;
     min-height: calc(100% - 10rem);
@@ -184,7 +186,7 @@ body {
 .email {
     display: flex;
     align-items: center;
-    gap: 3px;
+    gap: 5px;
 
     svg {
         fill: #fff;
@@ -194,4 +196,151 @@ body {
 .adress p {
     margin-top: 0;
     margin-bottom: 0;
+}
+
+@media (min-width: 500px) {
+    .about-me::after {
+        top: -80px;
+        left: -80px;
+        min-height: 120%;
+    }
+    .about-me::before {
+        position: absolute;
+        top: -30px;
+        left: 0;
+        min-width: 100%;
+        min-height: calc(100% + 30px);
+        content: "";
+        box-shadow: 0 0 10px oklch(0% 0 0 / 0.3);
+        background-color: #fff;
+        z-index: 0;
+    }
+
+    .about-me {
+        min-width: 80%;
+        margin: 60px;
+        display: block;
+
+        div,
+        p,
+        h2 {
+            position: relative;
+            z-index: 1;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-top: 40px;
+            margin-right: 40px;
+        }
+        p {
+            transform: translate(-25px, -50px);
+            margin: 100px 5px 0px 30px;
+            font-size: 1.1rem;
+            text-align: start;
+        }
+
+        .social-media {
+            transform: translate(0, -15px);
+            padding-right: 40px;
+            justify-content: end;
+            svg {
+                min-width: 32px;
+            }
+        }
+    }
+
+    .placeholder-img.dog {
+        position: relative;
+        float: left;
+        transform: translate(-30px , -50px);
+        margin: 10px;
+        align-self: start;
+        min-width: 260px;
+    }
+
+    .description::after {
+        display: none;
+    }
+
+    .work-container {
+        margin-top: 0;
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+    .my-work {
+        h2 {
+            margin-left: min(calc((50vw - 50vw * 0.7) / 2), calc((50vw - 246px) / 2));
+            margin-bottom: 0;
+            text-align: start;
+            font-size: 1.5rem;
+        }
+    }
+
+    .footer {
+        h2 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            font-size:1.2rem;
+        }
+
+        svg {
+            min-width: 26px;
+        }
+
+        .social-medias {
+            gap: 16px;
+            svg {
+                min-width: 32px;
+            }
+        }
+    }
+}
+
+@media (min-width: 1000px) {
+    .about-me {
+        margin-bottom: 100px;
+        .placeholder-img.dog {
+            float: left;
+            min-height: 100%;
+            margin: 0 40px 0 0 ;
+            min-width: 250px;
+            top: 0;
+            left: 0;
+            transform: scale(1.2);
+        }
+
+        h2 {
+            transform: translateY(20px);
+        }
+
+
+        p {
+            margin-top: 30px;
+            transform: initial;
+        }
+    }
+
+    .about-me::after {
+        min-height: 150%;
+    }
+
+    .about-me::before {
+        transform: initial;
+        top: 0;
+        min-height: 100%;
+    }
+
+    .work-container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .my-work {
+        h2 {
+            margin-left: calc((33vw - 33vw * 0.7) / 2);
+        }
+    }
 }
